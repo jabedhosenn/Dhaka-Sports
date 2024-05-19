@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dhaka Sports</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-info-subtle container text-info">
+    <!-- Navbar Start -->
+    <section>
+      <nav class="navbar container navbar-expand-lg">
+        <div class="container-fluid">
+          <h1>
+            <a class="navbar-brand fw-bold fs-1" href="#">
+              <span class="text-secondary-emphasis">Dhaka</span>
+              <span class="text-warning"> Sports</span>
+            </a>
+          </h1>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-2">
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-secondary-emphasis"
+                  aria-current="page"
+                  href="#"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-secondary-emphasis"
+                  aria-current="page"
+                  href="#"
+                  >Players</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-secondary-emphasis"
+                  aria-current="page"
+                  href="#"
+                  >Team</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </section>
+    <!-- Navbar End -->
+
+    <!-- Search Start -->
+    <section>
+      <div
+        id="search-section"
+        class="d-flex align-items-center justify-content-center mt-5"
+      >
+        <div class="container text-center pb-5">
+          <h2 class="text-secondary-emphasis">
+            Search <span class="text-warning">Players</span>
+          </h2>
+          <form id="searchForm" action="#" method="get">
+            <div class="input-group w-50 m-auto mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="search player name"
+                aria-describedby="button-addon2"
+                name="search_query"
+                id="searchInput"
+              />
+              <button class="btn btn-warning" type="submit" id="button-addon2">
+                Search
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- Search End -->
+
+    <!-- Body Start -->
+    <section>
+      <div class="row d-flex justify-content-between">
+        <!-- Players Part Start -->
+        <div class="col-sm-12 col-md-8">
+          <h2 class="mb-3 text-secondary-emphasis text-center">Players</h2>
+          <hr />
+          <div
+            id="players-container"
+            class="row row-cols-1 row-cols-md-3 g-2 p-2 bg-info"
+          ></div>
+        </div>
+        <!-- Players Part End -->
+
+        <!-- Added Players Start -->
+        <div class="col-sm-12 col-md-4">
+          <h2 class="text-secondary-emphasis text-center mb-2">
+            Players Group
+          </h2>
+          <hr />
+          <h3 class="text-secondary-emphasis text-center mb-4">
+            Added Players: <span id="added-players-qunatity"></span>
+          </h3>
+          <hr />
+          <div
+            id="added-players-container"
+            class="row row-cols-1 row-cols-md-1 g-2 p-2 bg-info"
+          ></div>
+        </div>
+        <!-- Added Players End -->
+      </div>
+
+      <!-- Modal Part Start -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content bg-info border">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 text-white" id="single-player-title">
+                Player name
+              </h1>
+            </div>
+            <div id="single-player-body" class="modal-body p-0 bg-info"></div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Part End -->
+    </section>
+    <!-- Body End -->
+
+    <!-- Footer Start -->
+    <hr class="mt-5" />
+    <footer class="py-5 nt-5">
+      <div class="container text-secondary-emphasis text-center">
+        <p class="display-5 mb-3">
+          Dhaka <span class="text-warning">Sports</span>
+        </p>
+        <small class="text-secondary-emphasis-50"
+          >&copy; 2024 - Dhaka Sports. All rights reserved.</small
+        >
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <script src="app.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
